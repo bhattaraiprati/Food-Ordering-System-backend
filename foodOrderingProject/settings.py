@@ -46,6 +46,11 @@ EXTERNAL_APPS = [
     'User',
     'rest_framework',
     'corsheaders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS  
@@ -65,6 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 if not os.getenv('DJANGO_PRODUCTION'):
     MIDDLEWARE.append('django.middleware.csrf.CsrfViewMiddleware')
@@ -124,7 +130,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'User.User'
 
-
+AUTHENTICATION_BACKENDS = [
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 
 

@@ -36,6 +36,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         data = super().validate({'email': user.email, 'password': password})  # trick super to work
         data['email'] = user.email
+        data['name'] = user.name
         data['role'] = user.role
         data['id'] = user.id
         return data
