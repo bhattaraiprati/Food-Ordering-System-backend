@@ -5,6 +5,6 @@ from .views import *
 
 urlpatterns = [
     path("", restaurentDetails ),
-    path("restaurant/register", RestaurantRegister )
+    path("restaurant/register/", Restaurant_Register )
 
 ]
