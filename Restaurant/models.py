@@ -10,6 +10,7 @@ class Restaurant(models.Model):
     owner_name = models.CharField(max_length=50)
     password = models.CharField(max_length=100)
     role = models.CharField(max_length=50)
+    status = models.CharField(max_length=50)
 
     def __str__(self):
         return self.restaurant_name
