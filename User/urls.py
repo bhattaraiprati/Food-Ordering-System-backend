@@ -10,11 +10,11 @@ from .views import CustomTokenObtainPairView
 router = DefaultRouter()
 router.register(r'', UserViewSet, basename='user')
 
-# urlpatterns = router.urls 
+urlpatterns = router.urls 
 
 
 urlpatterns = [
-    # path('', include(router.urls)),
+    path('', include(router.urls)),
     path('userRegister/', UserRegister, name="userRegister"),
     path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
