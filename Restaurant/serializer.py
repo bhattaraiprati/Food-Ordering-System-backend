@@ -8,7 +8,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ['restaurant_name', 'location', 'email', 'owner_name', 'password', 'role', "status"]
+        fields = ['id', 'restaurant_name', 'location', 'email', 'owner_name', 'password', 'role', "status"]
         
     def create(self, validated_data):
         # Hash the password before saving
