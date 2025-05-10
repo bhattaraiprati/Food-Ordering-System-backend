@@ -5,3 +5,7 @@
 fosEnv/
 
 
+__pycache__/
+*.pyc
+
+
